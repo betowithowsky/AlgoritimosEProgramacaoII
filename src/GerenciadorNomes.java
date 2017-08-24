@@ -69,9 +69,8 @@ public class GerenciadorNomes {
     
     public static void printList(String[] list){
         for(int i = 0; i < list.length;i++){
-            if(list[i] != null){
+            if(list[i] != null && !list[i].equals("")){
             System.out.printf("Lista [%s]: %s\n",i+1,list[i]);                
-            }else{
             }
             
             if(list[0] == null){
@@ -87,7 +86,7 @@ public class GerenciadorNomes {
            System.out.println("A lista está cheia!!");
         }else{         
            System.out.println("Escreva um Nome:");
-           String nomeAdd = input.next();
+           String nomeAdd = input.next().toLowerCase();
 
            if(checkName(list, nomeAdd)){
                list[position] = nomeAdd;
@@ -113,7 +112,7 @@ public class GerenciadorNomes {
     public static void deletName(String[] list){
         
         System.out.println("Digite o nome que deseja excluir: ");
-        String nomeDel = input.next();
+        String nomeDel = input.next().toLowerCase();
         
         for(int i = 0; i <= list.length;i++){
             if(nomeDel.equals(list[i])){
@@ -132,15 +131,18 @@ public class GerenciadorNomes {
     
     public static void searchName(String[] list){
         System.out.println("Pesquisa\nDigite um Nome:");
-        String name = input.next();
+        String name = input.next().toLowerCase();
         
         for(int i = 0; i < list.length; i++){
-            if(name.equals(list[i])){
+            if(list[i].equals(name)){
                 System.out.printf("Posição: Lista [%s]: %s\n",i+1,list[i]);
                 break;
-            }else
+            }
+            
+            else if(i == list.length){
                 System.out.println("Nome não existe.");
                 break;
+            } 
         }
     }
     
