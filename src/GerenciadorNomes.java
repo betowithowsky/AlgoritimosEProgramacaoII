@@ -68,13 +68,16 @@ public class GerenciadorNomes {
     }
     
     public static void printList(String[] list){
-        
         for(int i = 0; i < list.length;i++){
-            if(!list.equals("") || list[i].isEmpty()){
-            System.out.printf("Lista [%s]: %s\n",i+1,list[i]);
+            if(list[i] != null){
+            System.out.printf("Lista [%s]: %s\n",i+1,list[i]);                
             }else{
-            System.out.println("A lista está vazia.");                 
-            }  
+            }
+            
+            if(list[0] == null){
+                System.out.println("Lista Vazia");
+                break;
+            }
         }
     }
     
