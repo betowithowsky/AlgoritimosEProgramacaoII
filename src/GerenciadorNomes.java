@@ -21,7 +21,7 @@ public class GerenciadorNomes {
     //Loop
      static boolean loop = true;
     //Tamanho Lista
-     static int listSize = 3;
+     static int listSize = 50;
     public static void main(String[] args) {   
         String[] nameList = new String[listSize];
        
